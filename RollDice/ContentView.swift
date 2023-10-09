@@ -30,7 +30,7 @@ struct ContentView: View {
                 } label: {
                     Text("Roll it!")
                         .font(.largeTitle)
-                 
+                    
                 }
                 .buttonStyle(.bordered)
                 .padding()
@@ -42,7 +42,7 @@ struct ContentView: View {
                         Text("View Previous Rolls")
                     }
                 }
-                }
+                
             }
             .navigationTitle("Dice Roller")
             .toolbar {
@@ -52,8 +52,8 @@ struct ContentView: View {
                 }
             }
         }
-
     }
+    
     
     
     func rollDice() {
