@@ -8,15 +8,87 @@
 import SwiftUI
 
 struct ContentView: View {
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("diceroll.json")
+
+
+    @State private var rollAmount = 0
+    @State private var results = [GameResults]()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("You Rolled: ")
+                    .font(.title)
+                    .padding()
+                Text("\(rollAmount)")
+                    .font(.largeTitle)
+                    .padding()
+                
+                Button {
+                    rollDice()
+                    saveRoll()
+                } label: {
+                    Text("Roll it!")
+                        .font(.largeTitle)
+                 
+                }
+                .buttonStyle(.bordered)
+                .padding()
+                .clipShape(Capsule())
+                Form {
+                    NavigationLink {
+                        RollResultsView()
+                    } label: {
+                        Text("View Previous Rolls")
+                    }
+                }
+                }
+            }
+            .navigationTitle("Dice Roller")
+            .toolbar {
+                Button("Start New Game?"){
+                    resetGame()
+                    
+                }
+            }
         }
-        .padding()
+
     }
+    
+    
+    func rollDice() {
+        rollAmount = Int.random(in: 1...6)
+    }
+    
+    func saveRoll() {
+        let result = GameResults(id: UUID(), rollResult: rollAmount)
+        results.insert(result, at: 0)
+        if let encoded = try? JSONEncoder().encode(results) {
+            do {
+                try encoded.write(to: savePath) // encoded is type Data
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    func resetGame() {
+        
+        rollAmount = 0
+        results = []
+
+        if let encoded = try? JSONEncoder().encode(results) {
+            do {
+                try encoded.write(to: savePath) // encoded is type Data
+            } catch {
+                print("Error is \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
