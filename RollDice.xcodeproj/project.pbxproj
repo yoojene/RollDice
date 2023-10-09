@@ -13,7 +13,6 @@
 		443590682AD3FAFB0098910B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443590672AD3FAFB0098910B /* Preview Assets.xcassets */; };
 		4435906F2AD403F70098910B /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4435906E2AD403F70098910B /* FileManager-DocumentsDirectory.swift */; };
 		443590712AD4050F0098910B /* RollResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443590702AD4050F0098910B /* RollResultsView.swift */; };
-		443590732AD4055A0098910B /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443590722AD4055A0098910B /* Dice.swift */; };
 		443590752AD405870098910B /* GameResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443590742AD405870098910B /* GameResults.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +24,6 @@
 		443590672AD3FAFB0098910B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4435906E2AD403F70098910B /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		443590702AD4050F0098910B /* RollResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollResultsView.swift; sourceTree = "<group>"; };
-		443590722AD4055A0098910B /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		443590742AD405870098910B /* GameResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +63,6 @@
 				443590642AD3FAFB0098910B /* Assets.xcassets */,
 				443590662AD3FAFB0098910B /* Preview Content */,
 				443590702AD4050F0098910B /* RollResultsView.swift */,
-				443590722AD4055A0098910B /* Dice.swift */,
 				443590742AD405870098910B /* GameResults.swift */,
 			);
 			path = RollDice;
@@ -152,7 +149,6 @@
 				443590752AD405870098910B /* GameResults.swift in Sources */,
 				4435906F2AD403F70098910B /* FileManager-DocumentsDirectory.swift in Sources */,
 				443590632AD3FAFA0098910B /* ContentView.swift in Sources */,
-				443590732AD4055A0098910B /* Dice.swift in Sources */,
 				443590712AD4050F0098910B /* RollResultsView.swift in Sources */,
 				443590612AD3FAFA0098910B /* RollDiceApp.swift in Sources */,
 			);

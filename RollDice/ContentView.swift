@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var rollAmount = 0
     @State private var results = [GameResults]()
     
+    
+    @State private var numSides = 6
+    @State private var numDie = 1
     var body: some View {
         NavigationStack {
             VStack {
@@ -36,10 +39,28 @@ struct ContentView: View {
                 .padding()
                 .clipShape(Capsule())
                 Form {
-                    NavigationLink {
-                        RollResultsView()
-                    } label: {
-                        Text("View Previous Rolls")
+                    Stepper(value: $numSides, step: 2) {
+                        HStack {
+                            Text("Number of sides: ")
+                            Text("\(numSides)")
+                        }
+                        
+                    }
+                    Stepper(value: $numDie, in: 1...10)
+                    {
+                        HStack {
+                            Text("Number of die: ")
+                            Text("\(numDie)")
+
+                        }
+                        
+                    }
+                    Section {
+                        NavigationLink {
+                            RollResultsView()
+                        } label: {
+                            Text("View Previous Rolls")
+                        }
                     }
                 }
                 
@@ -48,7 +69,6 @@ struct ContentView: View {
             .toolbar {
                 Button("Start New Game?"){
                     resetGame()
-                    
                 }
             }
         }
@@ -56,8 +76,10 @@ struct ContentView: View {
     
     
     
+    
     func rollDice() {
-        rollAmount = Int.random(in: 1...6)
+        let rollPerDie = Int.random(in: 1...numSides)
+        rollAmount = rollPerDie * numDie
     }
     
     func saveRoll() {
